@@ -216,7 +216,7 @@ class _GDrive:
         mime_type = guess_type(file_path)[0] or "text/plain"
         file_name = os.path.basename(file_path)
         file_size = os.path.getsize(file_path)
-        body = {"name": file_name, "mimeType": mime_type, "description": "Uploaded using Userge"}
+        body = {"name": file_name, "mimeType": mime_type, "description": file_name,}
         if parent_id:
             body["parents"] = [parent_id]
         if file_size == 0:
